@@ -9,9 +9,8 @@
 <meta property="og:title" content="Atos Milla · Criador de sites">
 <meta property="og:description" content="Faço o site do seu negócio. Você fala direto comigo, do começo ao fim.">
 <meta property="og:type" content="website">
-<!-- PUBLICAÇÃO: trocar pelo endereço real do site no ar -->
 <meta property="og:url" content="https://atosmilla.github.io/">
-<meta property="og:image" content="https://SEU-DOMINIO/assets/og.jpg">
+<meta property="og:image" content="https://atosmilla.github.io/assets/og.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111318'/%3E%3Cpath d='M30 20L14 32l16 12' fill='none' stroke='%23F0532D' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M44 14L34 50' stroke='%23F5F4F0' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -373,6 +372,24 @@ a.tile:hover{text-decoration:none}
 @keyframes out{0%,30%{opacity:1;transform:none}40%,85%{opacity:0;transform:translateY(-8px)}100%{opacity:1;transform:none}}
 @keyframes inn{0%,30%{opacity:0;transform:translateY(8px)}40%,85%{opacity:1;transform:none}100%{opacity:0;transform:translateY(8px)}}
 
+/* programa de notas: notas passando de um sistema para o outro */
+.grades{position:absolute;left:24px;right:24px;bottom:68px;display:grid;grid-template-columns:1fr 34px 1fr;align-items:center}
+.grades .sys{background:var(--surface);border-radius:16px;padding:12px;box-shadow:var(--shadow)}
+.grades .sh{font-size:11px;font-weight:600;text-transform:uppercase;color:var(--ink-2);padding:0 4px 8px;border-bottom:1px solid var(--hairline);margin-bottom:4px}
+.grades .gr{display:flex;justify-content:space-between;font-size:14px;padding:6px 4px;color:var(--ink)}
+.grades .gr+.gr{border-top:1px solid var(--hairline)}
+.grades .gr b{font-weight:600;font-variant-numeric:tabular-nums}
+.grades .to .gr b{color:var(--action);opacity:0;transform:translateX(-8px)}
+.grades .pipe{display:flex;justify-content:center;gap:4px}
+.grades .pipe i{width:5px;height:5px;border-radius:50%;background:var(--action);opacity:.25}
+.live .grades .to .gr b{animation:gin 6s var(--ease) infinite}
+.live .grades .to .gr:nth-of-type(2) b{animation-delay:.35s}.live .grades .to .gr:nth-of-type(3) b{animation-delay:.7s}.live .grades .to .gr:nth-of-type(4) b{animation-delay:1.05s}
+.live .grades .pipe i{animation:pdot 1.2s var(--ease) infinite}
+.live .grades .pipe i:nth-child(2){animation-delay:.2s}.live .grades .pipe i:nth-child(3){animation-delay:.4s}
+@keyframes gin{0%,12%{opacity:0;transform:translateX(-8px)}22%,85%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes pdot{50%{opacity:1;transform:scale(1.3)}}
+@media (max-width:734px){.grades{left:18px;right:18px;grid-template-columns:1fr 26px 1fr}.grades .gr{font-size:13px}.grades .sys{padding:10px}}
+
 /* mini sites de exemplo */
 .mini{width:100%;height:200px;border-radius:14px;overflow:hidden;background:var(--mbg);box-shadow:0 10px 30px -14px rgba(0,0,0,.35);display:flex;flex-direction:column;transition:transform .5s var(--ease)}
 .card:hover .mini{transform:translateY(-4px)}
@@ -396,6 +413,7 @@ a.tile:hover{text-decoration:none}
   .sbar .typed::after{transform:scaleX(0)}
   .speed .fill{transform:scaleX(1)}
   .swap .val .new{opacity:1;transform:none}.swap .val .old{opacity:0}
+  .grades .to .gr b{opacity:1;transform:none}
 }
 body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}
 </style>
@@ -415,6 +433,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
   <nav class="gnav-in" aria-label="Principal">
     <a class="gnav-logo" href="#topo" aria-label="Atos Milla, início"><span class="logo-t"><b>&lt;</b>atos<b>.</b>milla<b>/&gt;</b></span></a>
     <ul class="gnav-links" id="gnav-links">
+      <li><a href="#produtos">Produtos</a></li>
       <li><a href="#o-que-vem">O que vem</a></li>
       <li><a href="#exemplos">Exemplos</a></li>
       <li><a href="#como-funciona">Como funciona</a></li>
@@ -459,6 +478,40 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
     <a data-wa="Oi Atos! Quero um site para o meu escritório." href="#contato"><div class="ico"><svg width="52" height="44" viewBox="0 0 52 44"><rect class="o" x="4" y="12" width="44" height="30" rx="6"/><path d="M18 12V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 24h44" stroke="#fff" stroke-width="2"/></svg></div>Escritório</a>
   </nav>
   <div class="wrap swipe" aria-hidden="true"><div class="swipe-track"><span class="swipe-thumb"></span></div></div>
+
+  <!-- 4b. PRATELEIRA: produtos e serviços -->
+  <section class="wrap shelf" id="produtos">
+    <h2 class="shelf-h rv"><span class="a">Produtos e serviços.</span> <span class="b">O que eu faço para você.</span></h2>
+    <div class="rail rv" data-rail>
+      <div class="rail-track">
+        <a class="card w-480" style="background:var(--tint-1)" data-live data-wa="Oi Atos! Quero saber mais sobre o programa de notas." href="#contato">
+          <div class="card-info"><p class="eyebrow">Produto para professores</p><h3 class="card-title">Programa de notas.</h3><p class="card-desc">Passa as notas de um sistema para o outro sozinho. Sem digitar tudo de novo.</p></div>
+          <div class="card-media"><div class="grades" aria-hidden="true">
+            <div class="sys"><p class="sh">Sistema 1</p><div class="gr"><span>Ana</span><b>8,5</b></div><div class="gr"><span>Bruno</span><b>7,0</b></div><div class="gr"><span>Carla</span><b>9,5</b></div><div class="gr"><span>Davi</span><b>6,5</b></div></div>
+            <div class="pipe"><i></i><i></i><i></i></div>
+            <div class="sys to"><p class="sh">Sistema 2</p><div class="gr"><span>Ana</span><b>8,5</b></div><div class="gr"><span>Bruno</span><b>7,0</b></div><div class="gr"><span>Carla</span><b>9,5</b></div><div class="gr"><span>Davi</span><b>6,5</b></div></div>
+          </div></div>
+          <span class="corner" aria-hidden="true"><svg><use href="#i-plus"/></svg></span>
+        </a>
+        <a class="card dark" style="background:var(--tint-4)" href="#o-que-vem">
+          <div class="card-info"><p class="eyebrow" style="color:#ff9a5c">Serviço</p><h3 class="card-title">Criação de sites.</h3><p class="card-desc" style="color:#a1a1a6">Bonito, rápido e no celular, com a cara do seu negócio.</p></div>
+          <div class="card-media"><div style="display:flex;gap:14px;align-items:flex-end;padding:0 28px 40px;width:100%">
+            <div class="mini" style="--mbg:#fff5f7;--mtx:#4a1d2c;--mc1:#c2577a;--mc2:#ffe1ea;--mbtn:#4a1d2c;height:180px;flex:1"><div class="mt">Bella<i></i></div><div class="mh"><b>Seu horário.</b><span>Agendar</span></div><div class="mf"><i></i><i></i></div></div>
+            <div class="mini" style="--mbg:#18181a;--mtx:#f2f2f2;--mc1:#2b2b2e;--mc2:#e2550f;--mbtn:#fff;height:210px;flex:1"><div class="mt">Brasa<i></i></div><div class="mh"><b>Seu carro.</b><span>Orçamento</span></div><div class="mf"><i></i><i></i></div></div>
+          </div></div>
+          <span class="corner" aria-hidden="true"><svg><use href="#i-out"/></svg></span>
+        </a>
+        <div class="stack">
+          <div class="tile" style="background:var(--surface)"><svg class="ticon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="22" height="22" rx="5"/><path d="M16 11v10M11 16h10"/></svg><p>Mais produtos em breve.</p><p class="sub">Ferramentas simples para facilitar o dia a dia.</p></div>
+          <a class="tile" style="background:var(--tint-3)" data-wa="Oi Atos! Tenho uma tarefa que me dá trabalho e queria saber se dá para fazer um programa." href="#contato"><svg class="ticon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4a8 8 0 0 0-5 14v4h10v-4a8 8 0 0 0-5-14zM12 27h8"/></svg><p>Precisa de um programa?</p><p class="sub">Me conta o que te dá trabalho e a gente vê se dá para resolver.</p></a>
+        </div>
+      </div>
+      <div class="rail-paddles">
+        <button class="paddle" data-prev aria-label="Anterior"><svg><use href="#i-prev"/></svg></button>
+        <button class="paddle" data-next aria-label="Próximo"><svg><use href="#i-next"/></svg></button>
+      </div>
+    </div>
+  </section>
 
   <!-- 5. PRATELEIRA: o que vem no site -->
   <section class="wrap shelf" id="o-que-vem">
@@ -638,7 +691,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
     <p>Preço e prazo combinados antes de começar.</p>
   </div>
   <div class="foot-cols">
-    <div><h4>O site</h4><a href="#o-que-vem">O que vem</a><a href="#exemplos">Exemplos</a><a href="#como-funciona">Como funciona</a></div>
+    <div><h4>O site</h4><a href="#produtos">Produtos e serviços</a><a href="#o-que-vem">O que vem</a><a href="#exemplos">Exemplos</a><a href="#como-funciona">Como funciona</a></div>
     <div><h4>Sobre</h4><a href="#sobre">Sobre mim</a><a href="#duvidas">Dúvidas</a></div>
     <div><h4>Contato</h4><a data-wa="Oi Atos! Vi seu site e quero conversar." href="#contato">WhatsApp</a><a href="tel:+5547992841403">Telefone</a></div>
     <div><h4>Onde</h4><span>Barra Velha, SC</span><span>Atendo todo o Brasil</span></div>
