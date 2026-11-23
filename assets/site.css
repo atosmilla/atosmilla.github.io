@@ -426,5 +426,5 @@ body.theme-blue{
   --shadow:0 1px 3px rgba(15,27,61,.08),0 6px 18px rgba(15,27,61,.08);
   --shadow-hover:0 1px 3px rgba(15,27,61,.12),0 8px 24px rgba(15,27,61,.14);
 }
-body.theme-blue .gnav{background:rgba(255,255,255,.9);border-bottom:1px solid #e3e9f5}
+:root body.theme-blue .gnav{background:rgba(255,255,255,.9);border-bottom:1px solid #e3e9f5}
 body.theme-blue .hl-on-dark{color:#93b7ff!important}
