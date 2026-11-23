@@ -414,29 +414,17 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 .btn-wa:hover{background:var(--ink-2)}
 .btn-wa svg{color:var(--wa)}
 
-/* ---------- TEMA BRANCO E AZUL (página de Produtos) ---------- */
-.theme-blue{
+/* ---------- TEMA BRANCO E AZUL (página de Produtos) ----------
+   Sempre claro, mesmo com o celular ou o computador no modo escuro. */
+body.theme-blue{
+  color-scheme:light;
   --canvas:#ffffff; --surface:#ffffff; --surface-alt:#f4f7fd;
+  --ink:#1d1d1f; --ink-2:#424245; --ink-3:#6e6e73; --ink-4:#86868b; --hairline:#dfe5f1;
+  --control:rgba(210,216,230,.64); --control-hover:rgba(220,226,238,.8);
   --accent:#1d4ed8; --action:#1d4ed8; --action-hover:#1e40af; --link:#1d4ed8; --flag:#1d4ed8;
   --tint-1:#dce7fd; --tint-2:#eaf0fb; --tint-3:#eef4ff; --tint-4:#0f1b3d;
   --shadow:0 1px 3px rgba(15,27,61,.08),0 6px 18px rgba(15,27,61,.08);
   --shadow-hover:0 1px 3px rgba(15,27,61,.12),0 8px 24px rgba(15,27,61,.14);
 }
-.theme-blue .gnav{background:rgba(255,255,255,.88);border-bottom:1px solid #e3e9f5}
-.theme-blue .hl-on-dark{color:#93b7ff!important}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]) .theme-blue{
-    --canvas:#060b18; --surface:#101a30; --surface-alt:#0b1324;
-    --accent:#7aa7ff; --action:#2563eb; --action-hover:#1d4ed8; --link:#8fb4ff; --flag:#8fb4ff;
-    --tint-1:#16264d; --tint-2:#111c36; --tint-3:#14213f; --tint-4:#0a1228; --hairline:#26324d;
-    --shadow:none; --shadow-hover:0 0 0 1px #26324d;
-  }
-  :root:not([data-theme="light"]) .theme-blue .gnav{background:rgba(6,11,24,.86);border-bottom-color:#1a2540}
-}
-:root[data-theme="dark"] .theme-blue{
-  --canvas:#060b18; --surface:#101a30; --surface-alt:#0b1324;
-  --accent:#7aa7ff; --action:#2563eb; --action-hover:#1d4ed8; --link:#8fb4ff; --flag:#8fb4ff;
-  --tint-1:#16264d; --tint-2:#111c36; --tint-3:#14213f; --tint-4:#0a1228; --hairline:#26324d;
-  --shadow:none; --shadow-hover:0 0 0 1px #26324d;
-}
-:root[data-theme="dark"] .theme-blue .gnav{background:rgba(6,11,24,.86);border-bottom-color:#1a2540}
+body.theme-blue .gnav{background:rgba(255,255,255,.9);border-bottom:1px solid #e3e9f5}
+body.theme-blue .hl-on-dark{color:#93b7ff!important}
