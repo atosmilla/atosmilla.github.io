@@ -434,3 +434,35 @@ body.theme-blue{
 }
 :root body.theme-blue .gnav{background:rgba(255,255,255,.9);border-bottom:1px solid #e3e9f5}
 body.theme-blue .hl-on-dark{color:#93b7ff!important}
+
+/* ---------- LOJA (marketplace) ---------- */
+.mk-bar{display:flex;flex-wrap:wrap;align-items:center;gap:14px;padding:18px;background:var(--surface-alt);border:1px solid var(--hairline);border-radius:var(--r-card)}
+.mk-search{flex:1 1 280px;display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-pill);padding:0 14px;height:44px;color:var(--ink-3)}
+.mk-search:focus-within{border-color:var(--action);box-shadow:0 0 0 3px rgba(29,78,216,.15)}
+.mk-search input{flex:1;border:0;outline:0;background:none;font:inherit;font-size:16px;color:var(--ink);height:100%;min-width:0}
+.mk-chips{display:flex;flex-wrap:wrap;gap:8px}
+.mk-chip{font:inherit;font-size:14px;font-weight:600;color:var(--ink);background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-pill);padding:9px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.mk-chip i{font-style:normal;font-weight:500;font-size:12px;color:var(--ink-3);background:var(--surface-alt);border-radius:4px;padding:1px 6px}
+.mk-chip:hover{border-color:var(--action)}
+.mk-chip[aria-pressed="true"]{background:var(--action);border-color:var(--action);color:#fff}
+.mk-chip[aria-pressed="true"] i{background:rgba(255,255,255,.2);color:#fff}
+.mk-count{font-size:14px;color:var(--ink-3);margin:18px 2px 14px}
+.mk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.mk-card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-card);overflow:hidden;display:flex;flex-direction:column}
+.mk-img{aspect-ratio:4/3;background:var(--tint-1)}
+.mk-img img{width:100%;height:100%;object-fit:cover}
+.mk-ph{display:block;width:100%;height:100%}
+.mk-body{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.mk-cat{font-size:12px;font-weight:600;text-transform:uppercase;color:var(--accent)}
+.mk-body h3{font-size:19px;line-height:1.2;font-weight:600}
+.mk-desc{font-size:14px;color:var(--ink-3)}
+.mk-foot{margin-top:auto;padding-top:14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.mk-price{font-size:19px}
+.mk-buy{padding:9px 16px;font-size:15px}
+.mk-empty{border:2px dashed var(--hairline);border-radius:var(--r-card);padding:64px 24px;text-align:center;color:var(--ink-3);display:flex;flex-direction:column;align-items:center;gap:12px}
+.mk-empty[hidden],.mk-grid[hidden]{display:none}
+.mk-empty svg{color:var(--accent)}
+.mk-empty h2{font-size:24px;line-height:1.2;font-weight:600;color:var(--ink)}
+.mk-empty p{max-width:40ch}
+.mk-empty .btn{margin-top:8px}
+@media (max-width:734px){.mk-bar{padding:14px}.mk-empty{padding:44px 20px}.mk-empty h2{font-size:21px}}

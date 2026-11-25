@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Produtos e serviços · Atos Milla</title>
+<title>Produtos · Atos Milla</title>
 <meta name="description" content="Produtos e serviços do Atos Milla: programa de notas para professores e criação de sites para pequenos negócios.">
 <meta name="theme-color" content="#ffffff">
-<meta property="og:title" content="Produtos e serviços · Atos Milla">
+<meta property="og:title" content="Produtos · Atos Milla">
 <meta property="og:description" content="Faço o site do seu negócio. Você fala direto comigo, do começo ao fim.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://atosmilla.github.io/produtos.html">
@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=JetBrains+Mono:wght@500;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=20261123g">
+<link rel="stylesheet" href="assets/site.css?v=20261125a">
 </head>
 <body class="theme-blue">
 
@@ -51,75 +51,43 @@
 <main id="topo">
   <section class="wrap phead">
     <div>
-      <a class="back lk-back" href="index.html">&lsaquo; Voltar para o início</a>
-      <h1>Produtos e serviços.</h1>
+      <a class="back" href="index.html">&lsaquo; Voltar para o início</a>
+      <h1>Produtos.</h1>
     </div>
     <div class="phead-side">
-      <h2>Ferramentas e serviços para facilitar o seu trabalho.</h2>
-      <div class="btn-row">
-        <a class="btn" data-wa="Oi Atos! Vi seus produtos no site e quero saber mais." href="#contato">Chamar no WhatsApp</a>
-      </div>
+      <h2>Programas e ferramentas para facilitar o seu trabalho.</h2>
     </div>
   </section>
 
-  <!-- PRODUTO: programa de notas -->
-  <section class="wrap shelf" id="programa-de-notas">
-    <h2 class="shelf-h"><span class="a">Produtos.</span> <span class="b">Feitos para poupar o seu tempo.</span></h2>
-    <div class="feature" style="margin-top:16px">
-      <div class="feature-copy">
-        <p class="eyebrow">Produto para professores</p>
-        <h2>Programa de notas.</h2>
-        <p>Passa as notas de um sistema para o outro sozinho. Você não precisa digitar tudo de novo.</p>
-        <p class="small">Para o professor que lança a mesma nota em mais de um sistema. Menos tempo digitando e menos chance de errar uma nota.</p>
-        <div class="btn-row"><a class="btn" data-wa="Oi Atos! Quero saber mais sobre o programa de notas." href="#contato">Quero o programa</a></div>
-      </div>
-      <div class="feature-media" data-live>
-        <div class="grades" aria-hidden="true">
-          <div class="sys"><p class="sh">Sistema 1</p><div class="gr"><span>Ana</span><b>8,5</b></div><div class="gr"><span>Bruno</span><b>7,0</b></div><div class="gr"><span>Carla</span><b>9,5</b></div><div class="gr"><span>Davi</span><b>6,5</b></div></div>
-          <div class="pipe"><i></i><i></i><i></i></div>
-          <div class="sys to"><p class="sh">Sistema 2</p><div class="gr"><span>Ana</span><b>8,5</b></div><div class="gr"><span>Bruno</span><b>7,0</b></div><div class="gr"><span>Carla</span><b>9,5</b></div><div class="gr"><span>Davi</span><b>6,5</b></div></div>
-        </div>
+  <!-- LOJA: os produtos vêm de assets/produtos.js -->
+  <section class="wrap shelf" id="loja">
+    <div class="mk-bar">
+      <label class="mk-search">
+        <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7" cy="7" r="5"/><path d="M11 11l4 4"/></svg>
+        <span class="sr">Buscar produto</span>
+        <input id="mk-search" type="search" placeholder="Buscar produto" autocomplete="off">
+      </label>
+      <div class="mk-chips" role="group" aria-label="Categorias">
+        <button class="mk-chip" type="button" data-cat="Todos" aria-pressed="true">Todos <i>0</i></button>
+        <button class="mk-chip" type="button" data-cat="Programas" aria-pressed="false">Programas <i>0</i></button>
+        <button class="mk-chip" type="button" data-cat="Ferramentas" aria-pressed="false">Ferramentas <i>0</i></button>
+        <button class="mk-chip" type="button" data-cat="Serviços" aria-pressed="false">Serviços <i>0</i></button>
       </div>
     </div>
-  </section>
+    <p class="mk-count" id="mk-count" aria-live="polite">0 produtos</p>
 
-  <section class="wrap shelf">
-    <h2 class="shelf-h"><span class="a">Como funciona o programa.</span> <span class="b">Simples assim.</span></h2>
-    <div class="rail" data-rail>
-      <div class="rail-track">
-        <div class="tile" style="background:var(--surface)"><span class="num">1</span><p>Você me chama no WhatsApp.</p><p class="sub">Me conta quais sistemas você usa.</p></div>
-        <div class="tile" style="background:var(--tint-1)"><span class="num">2</span><p>Eu deixo tudo pronto.</p><p class="sub">Ajusto o programa para os seus sistemas.</p></div>
-        <div class="tile" style="background:var(--surface)"><span class="num">3</span><p>As notas passam sozinhas.</p><p class="sub">Você só confere e pronto.</p></div>
-      </div>
-      <div class="rail-paddles">
-        <button class="paddle" data-prev aria-label="Anterior"><svg><use href="#i-prev"/></svg></button>
-        <button class="paddle" data-next aria-label="Próximo"><svg><use href="#i-next"/></svg></button>
-      </div>
+    <div class="mk-grid" id="mk-grid" hidden></div>
+
+    <div class="mk-empty" id="mk-empty">
+      <svg aria-hidden="true" viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 18h32l-3 22H11z"/><path d="M17 18v-4a7 7 0 0 1 14 0v4"/></svg>
+      <h2>Ainda não tem produtos aqui.</h2>
+      <p>Os primeiros chegam em breve. Quer ser avisado quando sair? Me chama no WhatsApp.</p>
+      <a class="btn btn-wa" data-wa="Oi Atos! Quero ser avisado quando sair produto novo na sua loja." href="#contato"><svg><use href="#i-wa"/></svg>Quero ser avisado</a>
     </div>
-  </section>
 
-  <!-- SERVIÇOS -->
-  <section class="wrap shelf" id="servicos">
-    <h2 class="shelf-h"><span class="a">Serviços.</span> <span class="b">Feitos sob medida para você.</span></h2>
-    <div class="rail" data-rail>
-      <div class="rail-track">
-        <a class="card dark" style="background:var(--tint-4)" href="index.html">
-          <div class="card-info"><p class="eyebrow hl-on-dark">Serviço</p><h3 class="card-title">Criação de sites.</h3><p class="card-desc" style="color:#a1a1a6">Bonito, rápido e no celular, com a cara do seu negócio.</p></div>
-          <div class="card-media"><div style="display:flex;gap:14px;align-items:flex-end;padding:0 28px 40px;width:100%">
-            <div class="mini" style="--mbg:#fff5f7;--mtx:#4a1d2c;--mc1:#c2577a;--mc2:#ffe1ea;--mbtn:#4a1d2c;height:180px;flex:1"><div class="mt">Bella<i></i></div><div class="mh"><b>Seu horário.</b><span>Agendar</span></div><div class="mf"><i></i><i></i></div></div>
-            <div class="mini" style="--mbg:#18181a;--mtx:#f2f2f2;--mc1:#2b2b2e;--mc2:#e2550f;--mbtn:#fff;height:210px;flex:1"><div class="mt">Brasa<i></i></div><div class="mh"><b>Seu carro.</b><span>Orçamento</span></div><div class="mf"><i></i><i></i></div></div>
-          </div></div>
-          <span class="corner" aria-hidden="true"><svg><use href="#i-out"/></svg></span>
-        </a>
-        <div class="stack">
-          <a class="tile" style="background:var(--tint-3)" data-wa="Oi Atos! Tenho uma tarefa que me dá trabalho e queria saber se dá para fazer um programa." href="#contato"><svg class="ticon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4a8 8 0 0 0-5 14v4h10v-4a8 8 0 0 0-5-14zM12 27h8"/></svg><p>Precisa de um programa?</p><p class="sub">Me conta o que te dá trabalho e a gente vê se dá para resolver.</p></a>
-          <div class="tile" style="background:var(--surface)"><svg class="ticon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="22" height="22" rx="3"/><path d="M16 11v10M11 16h10"/></svg><p>Mais produtos em breve.</p><p class="sub">Ferramentas simples para facilitar o dia a dia.</p></div>
-        </div>
-      </div>
-      <div class="rail-paddles">
-        <button class="paddle" data-prev aria-label="Anterior"><svg><use href="#i-prev"/></svg></button>
-        <button class="paddle" data-next aria-label="Próximo"><svg><use href="#i-next"/></svg></button>
-      </div>
+    <div class="mk-empty mk-none" id="mk-none" hidden>
+      <h2>Nenhum produto encontrado.</h2>
+      <p>Tente outra palavra ou outra categoria.</p>
     </div>
   </section>
 
@@ -127,11 +95,11 @@
     <div class="contact">
       <div>
         <p class="eyebrow">Contato</p>
-        <h2>Quer um destes?</h2>
-        <p>Me chama no WhatsApp. Quem responde sou eu.</p>
+        <h2>Procurando algo que não está aqui?</h2>
+        <p>Me conta o que você precisa. Quem responde sou eu.</p>
       </div>
       <div class="contact-act">
-        <a class="btn btn-lg btn-wa" data-wa="Oi Atos! Vi seus produtos no site e quero saber mais." href="https://wa.me/5547992841403"><svg><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
+        <a class="btn btn-lg btn-wa" data-wa="Oi Atos! Vi seus produtos no site e queria falar sobre um produto." href="https://wa.me/5547992841403"><svg><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
         <a class="lk" href="tel:+5547992841403">Ou ligue: +55 47 9 9284-1403</a>
         <p class="meta">Barra Velha, SC. Atendo todo o Brasil.</p>
       </div>
@@ -143,7 +111,6 @@
 <footer class="wrap foot">
   <p class="foot-logo"><span class="logo-t"><b>&lt;</b>atos<b>.</b>milla<b>/&gt;</b></span></p>
   <div class="foot-notes">
-    <p>Os nomes e notas mostrados no Programa de notas são ilustrativos.</p>
     <p>Preço e prazo combinados antes de começar.</p>
   </div>
   <div class="foot-cols">
@@ -155,6 +122,8 @@
   <div class="foot-legal"><span>Copyright © <span id="ano">2026</span> Atos Milla. Todos os direitos reservados.</span><span>Barra Velha, SC</span></div>
 </footer>
 
-<script src="assets/site.js?v=20261123g"></script>
+<script src="assets/site.js?v=20261125a"></script>
+<script src="assets/produtos.js?v=20261125a"></script>
+<script src="assets/loja.js?v=20261125a"></script>
 </body>
 </html>
