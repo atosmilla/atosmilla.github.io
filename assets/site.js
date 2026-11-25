@@ -44,6 +44,33 @@
     addEventListener('resize',drawSwipe);drawSwipe();
   }
 
+  // links que abrem em outra aba avisam isso para quem usa leitor de tela
+  document.querySelectorAll('a[target="_blank"]').forEach(a=>{
+    const wa=a.href.indexOf('wa.me')>-1,txt=wa?'abre o WhatsApp em outra aba':'abre em outra aba';
+    const nome=a.getAttribute('aria-label')||a.textContent.replace(/\s+/g,' ').trim();
+    if(nome.indexOf(txt)<0)a.setAttribute('aria-label',nome+' ('+txt+')');
+  });
+
+  // carrosséis podem ser rolados pelo teclado (setas)
+  document.querySelectorAll('.rail-track').forEach(t=>{
+    const h=t.closest('section')&&t.closest('section').querySelector('.shelf-h .a');
+    t.tabIndex=0;t.setAttribute('role','region');t.setAttribute('aria-label',h?h.textContent.replace(/\.$/,''):'Lista');
+  });
+
+  // Esc fecha o menu do celular
+  if(nav&&b)document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');b.setAttribute('aria-expanded',false);b.focus()}});
+
+  // aviso de cookies (só informa: o site não usa cookies de rastreamento)
+  let visto=false;
+  try{visto=localStorage.getItem('am-aviso')==='1'}catch(e){}
+  if(!visto){
+    const bar=document.createElement('div');
+    bar.className='cookie-bar';bar.setAttribute('role','region');bar.setAttribute('aria-label','Aviso de cookies');
+    bar.innerHTML='<p>Este site não usa cookies de rastreamento nem propaganda. <a href="cookies.html">Saiba mais</a></p><button type="button">Entendi</button>';
+    bar.querySelector('button').addEventListener('click',()=>{try{localStorage.setItem('am-aviso','1')}catch(e){}bar.remove()});
+    document.body.appendChild(bar);
+  }
+
   // tudo aparece pronto, sem entrada animada
   document.querySelectorAll('.rv').forEach(e=>e.classList.add('in','settled'));
   document.querySelectorAll('[data-brand]').forEach(e=>e.classList.add('done'));

@@ -22,7 +22,7 @@
     return '<article class="mk-card"><div class="mk-img">'+img+'</div><div class="mk-body">'+
       '<p class="mk-cat">'+esc(p.categoria)+'</p><h3>'+esc(p.nome)+'</h3><p class="mk-desc">'+esc(p.descricao)+'</p>'+
       '<div class="mk-foot"><b class="mk-price">'+esc(p.preco||'Sob consulta')+'</b>'+
-      '<a class="btn mk-buy" href="'+link+'" target="_blank" rel="noopener">Comprar</a></div></div></article>';
+      '<a class="btn mk-buy" href="'+link+'" target="_blank" rel="noopener" aria-label="Comprar '+esc(p.nome)+' (abre o WhatsApp em outra aba)">Comprar</a></div></div></article>';
   };
 
   const draw=()=>{
