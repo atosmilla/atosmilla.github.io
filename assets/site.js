@@ -73,6 +73,24 @@
 
   // tudo aparece pronto, sem entrada animada
   document.querySelectorAll('.rv').forEach(e=>e.classList.add('in','settled'));
-  document.querySelectorAll('[data-brand]').forEach(e=>e.classList.add('done'));
+  // logo sendo digitada: escreve "<atis.mi", apaga até "<at" e escreve certo (única animação do site)
+  document.querySelectorAll('[data-brand]').forEach(wrap=>{
+    const h=wrap.querySelector('.brand'),out=h&&h.querySelector('.typed');
+    if(!out)return;
+    const FINAL='<atos.milla/>';
+    const esc=c=>c==='<'?'&lt;':c==='>'?'&gt;':c;
+    const paint=(txt,caret)=>{out.innerHTML=[...txt].map(c=>'<>/.'.includes(c)?'<b>'+esc(c)+'</b>':esc(c)).join('')+(caret?'<span class="caret"></span>':'')};
+    let reduce=false;try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+    if(reduce){paint(FINAL,false);h.classList.add('done');wrap.classList.add('done');return}
+    const steps=[];let cur='';
+    const type=(s,base)=>{for(const c of s){cur+=c;steps.push([cur,base+Math.random()*70])}};
+    const del=n=>{for(let i=0;i<n;i++){cur=cur.slice(0,-1);steps.push([cur,55])}};
+    type('<atis.mi',95);steps.push([cur,650]);del(5);steps.push([cur,260]);type('os.milla/>',85);
+    paint('',true);
+    let i=0;
+    const run=()=>{if(i>=steps.length){paint(FINAL,true);h.classList.add('done');wrap.classList.add('done');return}
+      const [txt,wait]=steps[i++];paint(txt,true);setTimeout(run,wait)};
+    setTimeout(run,500);
+  });
   document.querySelectorAll('[data-live]').forEach(e=>e.classList.add('live'));
 })();

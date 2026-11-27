@@ -401,7 +401,12 @@ a.tile:hover{text-decoration:none}
   .rv,.rail.rv .rail-track>*,.iconnav.rv a{opacity:1!important;transform:none!important}
   .split .wd>span{transform:none!important}
   .brand-sub{opacity:1!important;transform:none!important}
-  .brand .caret{display:none}
+  /* única animação do site: a logo sendo digitada (pedido do Atos em 2026-11-27) */
+  .brand .ghost{visibility:hidden}
+  .brand .typed{position:absolute;left:0;top:0}
+  .brand .caret{animation:caret 1s steps(1) infinite!important}
+  .brand.done .caret{animation:caret 1s steps(1) 3,fadeout .4s ease 3s forwards!important}
+  @media (prefers-reduced-motion:reduce){.brand .caret{display:none}}
   .card:hover,.tile:hover{transform:none}
   .phone .b,.msg,.result,.result+.result,.browser .url b,.mono .tag{opacity:1;transform:none}
   .sbar .typed::after{transform:scaleX(0)}
